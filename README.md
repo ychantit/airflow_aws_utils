@@ -14,4 +14,3 @@ A collection of airflow helper scripts to quickly bootstrap building a data pipe
 
 # aws_athena_query_runner
 * This workflow shows how to submit a query for aws athena and then block until the query returns
-*
