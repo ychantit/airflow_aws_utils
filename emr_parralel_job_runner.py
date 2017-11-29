@@ -89,7 +89,6 @@ def gen_hive_scripts_for_entity(entity):
 # each job will be running in its own airflow ssh task 
 def gen_hive_scripts(**kwargs):
 	hive_scripts = []
-	hive_steps = []
 	# reset s3 hive script location 
 	response = s3_client.list_objects_v2(Bucket=wk_conf.get('s3_bucket'),
 		Prefix=wk_conf.get('s3_hive_script_location')
@@ -107,19 +106,8 @@ def gen_hive_scripts(**kwargs):
 		l = gen_hive_scripts_for_entity(entity)
 		if len(l)>0:
 			hive_scripts.extend(l)
-	i=1
-	for f in hive_scripts:
-		hive_steps.append({
-				'Name': 'convert_s3_json_to_parquet_'+str(i),
-				'ActionOnFailure': 'CONTINUE',
-				'HadoopJarStep': {
-					'Jar': 'command-runner.jar',
-					'Args': [
-						 'hive','-f', f
-					]}})
-		i+=1
-	kwargs['ti'].xcom_push(key='hive_steps', value=hive_steps)
-	if len(hive_steps)>0:
+	# if no job to run shortcircuit the workflow
+	if len(hive_scripts)>0:
 		return True
 	return False 
 		
