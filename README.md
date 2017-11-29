@@ -1,5 +1,5 @@
 # airflow_aws_utils
-A collection of airflow helper scripts to quickly bootstrap building a data pipeline on aws 
+A collection of airflow helper scripts to bootstrap building data processing pipelines on aws 
 
 # aws_emr_concurrent_job_runner
 * This workflow showcase a solution to run concurrent jobs on AWS EMR 
