@@ -9,5 +9,5 @@ A collection of airflow helper scripts to quickly bootstrap building a data pipe
   - Aws credentials are correctly set http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
   - An Aws emr instance is available
   - Airflow is installed https://airflow.apache.org/installation.html
-  - An airflow connection to connect to the EMR instance is correctly created (ssh_emr_default). This connection holds the reference to the key file for ssh connection, remote user and host to use to connect to your emr instance
+  - An airflow connection to connect to the EMR instance is correctly created (ssh_emr_default). This connection holds the reference to the key file, remote user and host for ssh session
  * The actual workflow example will compute a number of jobs to run (e.g. as an example partitions to add for a external table on s3) and then launch a sub dag to submit all jobs for aws emr to compute and wait for it to finish
