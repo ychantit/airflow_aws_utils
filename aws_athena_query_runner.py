@@ -33,7 +33,7 @@ def check_query_status(**kwargs):
     return result
 	
 # s3 query output location	
-s3_ouput = "s3://ych-infinity-dev/athena_results/count_query"
+s3_ouput = "s3://mybucket.../athena_results/count_query"
 # query to run on aws athena
 count_query = " select count(*) from random_msg where year='2017' and month='10' and day='23' "
 # aws athena database name
