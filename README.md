@@ -1,7 +1,7 @@
 # airflow_aws_utils
 A collection of airflow helper scripts to bootstrap building data processing pipelines on aws 
 
-# Requirements
+# requirements
   - AWS credentials are correctly set http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
   - An Aws emr instance is available
   - Airflow is installed https://airflow.apache.org/installation.html
