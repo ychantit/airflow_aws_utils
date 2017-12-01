@@ -3,7 +3,7 @@ A collection of airflow helper scripts to bootstrap building data processing pip
 
 # requirements
   - AWS credentials are correctly set http://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
-  - An Aws emr instance is available
+  - An AWS EMR instance is available
   - Airflow is installed https://airflow.apache.org/installation.html
   - An airflow connection to connect to the AWS EMR instance (called ssh_emr_default in the script). This connection holds defines the ssh key file, remote user and host for ssh session, ssh properties (such as no host check)
   
